@@ -1,4 +1,5 @@
 *.gem
+db/cars.yml
 *.rbc
 /.config
 /coverage/
