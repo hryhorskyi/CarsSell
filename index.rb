@@ -1,21 +1,17 @@
-require 'yaml'
-require 'date'
-require_relative 'lib/read_db.rb'
-require_relative 'lib/input.rb'
-require_relative 'lib/search.rb'
-require_relative 'lib/sort.rb'
-require_relative 'lib/output.rb'
-
-SEARCHING_CONDITIONS = %w[make model year_from year_to price_from price_to]
+require_relative 'requiries.rb'
 
 file_name = "#{File.dirname(__FILE__)}/db/cars.yml"
 
-cars_list = read_data(file_name)
+cars = Management::DBReader.call(file_name)
 
-rules = getting_searching_conditions(SEARCHING_CONDITIONS)
+requests = Management::Input.call
 
-searched_cars = search(cars_list, rules)
+searched_cars = Management::Search.call(cars, requests)
 
-sorted_cars = sorting(searched_cars)
+sorted_cars = Management::Sort.call(searched_cars, requests)
 
-output = output_cars(sorted_cars)
+count = Management::Statistic.call(requests)
+
+Management::SaveStat.call(sorted_cars, requests, count)
+
+Management::Output.call(sorted_cars, count)

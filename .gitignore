@@ -1,5 +1,6 @@
 *.gem
 db/cars.yml
+db/searches.yml
 *.rbc
 /.config
 /coverage/
