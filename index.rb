@@ -1,6 +1,7 @@
 require_relative 'requiries.rb'
 
 file_name = "#{File.dirname(__FILE__)}/db/cars.yml"
+file_searches = "#{File.dirname(__FILE__)}/db/searches.yml"
 
 cars = Management::DBReader.call(file_name)
 
@@ -10,8 +11,10 @@ searched_cars = Management::Search.call(cars, requests)
 
 sorted_cars = Management::Sort.call(searched_cars, requests)
 
-count = Management::Statistic.call(requests)
+requests_up = requests.to_s
 
-Management::SaveStat.call(sorted_cars, requests, count)
+statistics = Management::Statistic.call(file_searches, requests_up, requests, sorted_cars)
 
-Management::Output.call(sorted_cars, count)
+Management::SaveStat.call(file_searches, statistics)
+
+Management::Output.call(sorted_cars, statistics, requests_up)
