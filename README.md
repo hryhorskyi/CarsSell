@@ -1,10 +1,9 @@
 # HOW TO INSTALL THIS APP
 
-1. You should have Ruby on your PC(version 3.0.2 recommended)
-2. Clone the repo by opening the terminal on your computer and running the command:
-$git clone https://github.com/hryhorskyi/cars_management
-3. Open the terminal and enter this command to go to the right repository:
-$cd cars_management
-4. In your terminal enter:
-$ruby index.rb
-6. Check the result
+Step by step
+
+1. You must have Ruby installed (according to the file .ruby-version)
+2. Perform the operation of adding a remote repository git clone https://github.com/hryhorskyi/cars_management
+3. Change the working directory to the project directory $cd cars_management
+4. Run in terminal $bundle install for install dependencies
+5. Run the project for execution in terminal $ruby index.rb

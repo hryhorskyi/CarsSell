@@ -1,26 +1,21 @@
 module Management
-  class Statistic < Assistant 
-    def initialize requests
+  class Statistic < Assistant
+   def initialize data, requests, cars
+      @data = data
       @requests = requests
-      @data = 'db/searches.yml'
-      @searches = []
-      @count = []
+      @cars = cars
     end
-	  
-    def call	
-      YAML::load_stream(File.open(@data)){ |doc|
-        if doc["Total quantity"] && doc["Requests quantity"]
-          doc = doc.except("Total quantity", "Requests quantity")
-        end
-        @searches << doc   	
-      }	
     
-      @searches.each do |item|		
-        if @requests == item
-          @count << item
-        end
+    def call      
+      statistics = YAML::load(File.open(@data)) || {}
+    
+      if statistics[@requests]
+        statistics[@requests][:req_count] += 1
+      else
+        statistics[@requests] = { result: @requests, req_count: 1, cars_count: @cars.size }
       end
-      @count = @count.size
-    end	  
+     
+    statistics
+    end
   end
 end

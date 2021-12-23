@@ -1,29 +1,29 @@
 module Management
   class Input < Assistant 
     def call  
-      puts "Please choose search conditions: "
-      puts "Please choose the make: "
+      puts I18n.t('search.select') 
+      puts I18n.t('search.make_ask')
       make = gets.strip.capitalize
   
-      puts "Please choose the model: "
+      puts I18n.t('search.model_ask')
       model = gets.strip.capitalize
   
-      puts "Please choose the year_from: "
+      puts I18n.t('search.year_from')
       year_from = gets.to_i
   
-      puts "Please choose the year_to: "
+      puts I18n.t('search.year_to')
       year_to = gets.to_i
   
-      puts "Please choose price_from: "
+      puts I18n.t('search.price_from')
       price_from = gets.to_i
   
-      puts "Please choose price_to: "
+      puts I18n.t('search.price_to')
       price_to = gets.to_i
   
-      puts "Please choose sort option(date/price): "
+      puts I18n.t('sort.type')
       sort_options = gets.strip.downcase
   
-      puts "Please choose sort direction(desc/asc): "
+      puts I18n.t('sort.direction')
       sort_direction = gets.strip.downcase
   
       { make: make, model: model, year_from: year_from, year_to: year_to, price_from: price_from, 

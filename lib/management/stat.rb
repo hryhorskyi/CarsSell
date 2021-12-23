@@ -1,16 +1,12 @@
 module Management
-  class SaveStat < Assistant
-    def initialize cars, requests, count, searches = 'db/searches.yml'
-      @cars = cars
-      @requests = requests
-      @count = count
-      @searches = searches
+  class SaveStat < Assistant  
+    def initialize data, statistics
+      @data = data
+      @statistics = statistics
     end
 
-    def call
-      File.open(@searches, "a") do |file|
-        file.write("Total quantity: #{@cars.size}\n", "Requests quantity: #{1 + @count}\n", @requests.to_yaml)
-      end
+    def call 
+      File.open(@data, "w") { |file| file.write(@statistics.to_yaml) }
     end
   end
 end
