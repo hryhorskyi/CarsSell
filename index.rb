@@ -3,4 +3,3 @@
 require_relative 'requiries'
 
 Management::Menu.call
-
