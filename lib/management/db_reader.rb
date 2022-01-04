@@ -1,6 +1,9 @@
+# frozen_string_literal: true
+
 module Management
+  CURRENT_PATH = "#{File.dirname(__FILE__)}/db".freeze
   class DBReader < Assistant
-    def initialize file_name
+    def initialize(file_name)
       @file_name = file_name
     end
 

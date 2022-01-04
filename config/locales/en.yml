@@ -1,15 +1,15 @@
 en:
   search:
     select: 'Please choose search conditions: '
-    make_ask: 'Please choose make'
-    model_ask: 'Please choose model'
+    make: 'Please choose make'
+    model: 'Please choose model'
     year_from: 'Please choose year from'
     year_to: 'Please choose year to'
     price_from: 'Please choose price from'
     price_to: 'Please choose price to'
   sort:
-    direction: 'Please choose sort direction(desc/asc):'
-    type: 'Please choose sort option(date_added/price):'
+    sort_direction: 'Please choose sort direction(desc/asc):'
+    sort_option: 'Please choose sort option(date_added/price):'
   print:  
     result: 'Result'
     statistic: 'Statistic'
@@ -26,3 +26,13 @@ en:
     searched: 'Searched cars'
     rule: 'Rule'
     desc: 'Description'
+    menu_option: 'Select the option'
+    menu_1: '1 - Search a car'
+    menu_2: '2 - Show all cars'
+    menu_3: '3 - Help'
+    menu_4: '4 - Exit'
+    menu_end: 'Good bye! See you soon!'
+    menu_error: 'Unexpected value, try again'
+    data_error: 'Cars are not founded'
+    welcome: 'Lucky to see you!'
+    help: 'Choose the option you need and search cars'
