@@ -1,9 +1,15 @@
- # frozen_string_literal: true
+  # frozen_string_literal: true
 
- source "https://rubygems.org"
+source 'https://rubygems.org'
 
- git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
-
- gem "i18n"
- gem "colorize"
- gem "terminal-table"
+gem 'bcrypt'
+gem 'bundler-audit'
+gem 'bundler-leak'
+gem 'colorize'
+gem 'i18n'
+gem 'lefthook'
+gem 'rubocop', '~> 1.22', require: false
+gem 'rubocop-md'
+gem 'rubocop-performance', require: false
+gem 'rubocop-rake'
+gem 'terminal-table'
