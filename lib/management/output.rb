@@ -10,7 +10,7 @@ module Management
 
     def call
       print_statistic
-      print_cars
+      output_table
     end
 
     private
@@ -32,8 +32,13 @@ module Management
         end
         rows << :separator
       end
-      table = Terminal::Table.new(title: I18n.t('print.searched'),
-                                  headings: [I18n.t('print.rule'), I18n.t('print.desc')], rows: rows)
+      Terminal::Table.new(title: I18n.t('print.searched'),
+                          headings: [I18n.t('print.rule'), I18n.t('print.desc')], rows: rows)
+    end
+
+    def output_table
+      table = print_cars
+      table.style = { border_bottom: false }
       puts table
     end
   end
